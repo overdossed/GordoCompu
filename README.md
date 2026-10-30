@@ -254,6 +254,8 @@ Video: [Cómo hacer motes, por LaserTurtle42](https://youtu.be/XiT9jwemu3k). La 
 
 Los subsumes del DPS. El Cyte Client necesita el build de Nidus Prebuff. Ver el [POV de Cyte en Arbitration](https://www.youtube.com/playlist?list=PLePgtsuwWIDhxPtQ3sjrbaj5BgdKDKY78).
 
+Les dejo POVs de gente del server de arbis, porque no he podido grabar una run de cada mapa. Igual les servirá para tener una noción de cómo es Cyte.
+
 <details>
 <summary><b>Wrathful Advanced (Host)</b> <kbd>Build meta</kbd></summary>
 
