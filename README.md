@@ -227,6 +227,16 @@ Son 21 pasos en tres fases. Cada línea indica quién lo hace.
 
 Video: [Cómo hacer motes, por LaserTurtle42](https://youtu.be/XiT9jwemu3k). La guía indica que el video se actualizará pronto.
 
+### Videos del prebuff
+
+**Prebuff de Jade**
+
+https://github.com/user-attachments/assets/10143bb2-364a-4505-92d8-99c7c676f2c3
+
+**Prebuff de Nidus**
+
+https://github.com/user-attachments/assets/75f699b5-6d91-4498-8a49-57dabfaa39c5
+
 ### Desde el Client y los motes
 
 **Prebuff desde el Client (Nidus).** Depende 100% de la duración de la Jade.
@@ -246,6 +256,10 @@ Video: [Cómo hacer motes, por LaserTurtle42](https://youtu.be/XiT9jwemu3k). La 
 6. Activar vigor.
 7. Esperar el segundo link del Nidus (porque se activa Bellicose de él).
 8. Lanzar el mote de cadencia (verde).
+
+**Combo de Wisp**
+
+https://github.com/user-attachments/assets/9f232f6d-7808-4348-b38f-43f2fa2414eb
 
 
 <p align="right"><a href="#índice">Volver al índice</a></p>

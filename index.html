@@ -211,6 +211,11 @@ h3.sub2{font:600 var(--s2) var(--f);margin:48px 0 12px}
 /* Tyana */
 .loot{margin-top:24px;background:var(--panel2);border-radius:var(--r);padding:28px}
 .loot h3{font:600 var(--s2) var(--f);margin-bottom:10px}
+.vids figure{margin:0}
+.two>div>.vids{margin-top:16px}
+.vids video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border-radius:var(--r)}
+.vids figcaption{margin-top:8px;font:500 var(--s0) var(--f);color:var(--muted)}
+.vids figcaption b{color:var(--ink);font-weight:600;margin-right:8px}
 .loot .two{margin-top:20px}
 .loot .two>div{background:var(--panel)}
 .loot .note{background:var(--panel)}
@@ -400,6 +405,12 @@ h3.sub2{font:600 var(--s2) var(--f);margin:48px 0 12px}
     <div id="seq"></div>
     <p class="fn" style="margin-top:14px">Video: <a href="https://youtu.be/XiT9jwemu3k" target="_blank" rel="noopener">Cómo hacer motes, por LaserTurtle42</a>. La guía indica que el video se actualizará pronto.</p>
 
+    <h3 class="sub2">Videos del prebuff</h3>
+    <div class="two vids">
+      <figure><video controls playsinline preload="none" width="960" height="540" poster="video/jade-prebuff.webp" src="video/jade-prebuff.mp4"></video><figcaption><b>Prebuff de Jade</b>5:09</figcaption></figure>
+      <figure><video controls playsinline preload="none" width="1280" height="720" poster="video/nidus-prebuff.webp" src="video/nidus-prebuff.mp4"></video><figcaption><b>Prebuff de Nidus</b>2:12</figcaption></figure>
+    </div>
+
     <h3 class="sub2">Desde el Client y los motes</h3>
     <div class="two">
       <div>
@@ -411,6 +422,7 @@ h3.sub2{font:600 var(--s2) var(--f);margin:48px 0 12px}
         <h4>Combo de Wisp para los motes</h4>
         <p>Es más fácil de lo que uno cree.</p>
         <ol class="steps" id="motes"></ol>
+        <div class="vids"><figure><video controls playsinline preload="none" width="1280" height="720" poster="video/wisp-motes.webp" src="video/wisp-motes.mp4"></video><figcaption><b>Combo de Wisp</b>0:20</figcaption></figure></div>
       </div>
     </div>
   </section>
