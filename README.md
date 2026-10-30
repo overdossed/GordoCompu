@@ -591,7 +591,7 @@ Utilicé la imagen de la guía original porque no tengo la Strun buildeada.
 
 | **Incarnon** | Evo 2: Blazing Barrel<br>Evo 3: Swift Deliverance<br>Evo 4: Elemental Balance |
 |---|---|
-| **Rivens** | `MS SC AE`<br>`MS SC MC (Shotgun Elementalist > Vigilante Armaments)`<br>`MS SC HEAT/COLD (Burdened Mag > of Scattering Inferno/Frigid Blast)`<br>`MS MC HEAT/COLD` |
+| **Rivens** | `MS SC AE`<br>`MS SC MC (cambia Shotgun Elementalist por Vigilante Armaments)`<br>`MS SC HEAT/COLD (cambia Burdened Mag por Scattering Inferno/Frigid Blast)`<br>`MS MC HEAT/COLD` |
 | **Negativos** | Impact, Fire Rate, Slash, CD, Ammo Max, Reload Speed, Projectile Speed |
 
 </details>
@@ -846,7 +846,7 @@ En los mapas de Interception existe el “overkilling”: cuando mueren los prim
 | **LoS** | línea de visión |
 | **VE** | Vitus Essence |
 
-<sub>En las notas de mods, el signo “>” se deja como aparece en la guía original. La guía no define MC; se deja igual.</sub>
+<sub>La guía original no define MC; se deja igual.</sub>
 
 <p align="right"><a href="#índice">Volver al índice</a></p>
 
