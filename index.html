@@ -305,7 +305,7 @@ h3.sub2{font:600 var(--s2) var(--f);margin:48px 0 12px}
     <a href="#pick">Elegir misión<small>qué llevar en cada una</small></a>
     <a href="#sec-espectros">Espectros<small>cuál y qué plano</small></a>
     <a href="#sec-prebuff">Prebuff<small>builds y paso a paso</small></a>
-    <a href="#sec-cyte">Cyte<small>5 builds</small></a>
+    <a href="#sec-cyte">Cyte<small>4 builds</small></a>
     <a href="#sec-soporte">Soporte<small>Wisp, Rhino, Citrine, Vauban</small></a>
     <a href="#sec-armas">Armas<small>builds y cómo elegir</small></a>
     <a href="#sec-tyana">Tyana Pass<small>qué llevar y cómo lootear</small></a>
@@ -576,7 +576,6 @@ const IMG={
  "i1": "img/cyte-ajustes-2.webp",
  "i15": "img/cyte-wah.webp",
  "i7": "img/cyte-wac.webp",
- "i5": "img/cyte-em.webp",
  "i16": "img/cyte-ts.webp",
  "i25": "img/s-wisp-roar.webp",
  "i12": "img/s-wisp-ts.webp",
@@ -616,7 +615,6 @@ const GROUPS={
  cyte:[
   {id:'cyte-wah',n:'Wrathful Advanced',tag:'Host',star:1,img:'i31',alt:'i32',pre:['i17','i1'],req:'Es la build estándar de Cyte para Boar o Kohm, lo que gustes.',used:['Boar con riven de Ammo Efficiency','Kohm'],shards:SH_CYTE,shardNote:'(Strun/Boar). Las dos capturas de arriba son de la guía: el ajuste Invert Tap/Hold Abilities y el slot de Kullervo.',notes:['Variante en la guía de Gordo Compu: 2x Parkour Velocity y 3x Casting Speed.']},
   {id:'cyte-wac',n:'Wrathful Advanced',tag:'Client',star:1,img:'i31',alt:'i32',pre:['i17','i1'],usedLbl:'Se usa cuando no se necesita Thermal Sunder',used:['Modded Blast','Wisp Thermal Sunder'],notes:['Si sientes que tienes demasiado PV con Arcane Consequence, puedes bajar el rango o reemplazar algunos shards de Parkour Velocity por shards de Primary Status Chance.'],shards:SH_CYTE,shardNote:'Con Arcane Consequence puedes cambiar shards de PV por shards de Primary Status Chance.'},
-  {id:'cyte-em',n:'Energized Munitions',tag:'Host',img:'i5',used:['Boar sin riven de Ammo Efficiency'],shards:SH_CYTE},
   {id:'cyte-ts',n:'Thermal Sunder',tag:'Client',img:'i16',usedLbl:'Se usa cuando se necesita Thermal Sunder',used:['Sin Modded Blast ni Wisp Thermal Sunder','Daño extra para misiones Defense','Se recomienda con Client más que con Host, con Boar, Strun o Kohm'],notes:['!No uses Nidus Specter si tienes el buff de Invig/Arbi: lanzar Sunder sobre 1200% causa lag. Esta build laguea el doble que la normal.','Variante en la guía de Gordo Compu: 2x Parkour Velocity y 3x Primary Status Chance.'],shards:SH_CYTE,shardNote:'(Strun/Boar)'},
   {id:'cyte-un',n:'Escuela Unairu',img:'i34',used:['Se usa esta escuela por su ataque Tauron, que da armadura y permite tener al máximo la Sobrecarga primaria.']}
  ],
@@ -640,8 +638,8 @@ const GROUPS={
   {id:'p-vauban',n:'Vauban Brightbonnet',star:1,img:'i9',shards:[['5x','Ability Strength']]}
  ],
  armas:[
-  {id:'w-boar-mb',gh:'Primarias',n:'Boar Modded Blast',tag:'Host',star:1,img:'i22',req:'Una de las mejores escopetas del juego. Es meta por su gran dispersión de balas y el alto multishot y cadencia que puede tener.',used:['No requiere Thermal Sunder','Usar el suministro de explosión de Cyte','Si no tienes riven, puedes meterle más cadencia'],notes:['Necesitas un riven AE o el build EM; si no, tendrás que poner Shotgun Elementalist en lugar de Frail Momentum.'],evo:EVO_BOAR,rivens:['MS FR AE','MS AE','MS FR SC','MS FR'],neg:NEG_BOAR},
-  {id:'w-boar-vs',gh:'Primarias',n:'Boar Vicious Spread',tag:'Host',star:1,img:'i28',used:['Recomendado para Xini/Cytherean','Vicious Spread rango 2 (puedes probar R1 a R3)','Requiere Thermal Sunder'],notes:['Necesitas un riven AE o el build EM; si no, tendrás que poner Shotgun Elementalist en lugar de Frail Momentum.'],evo:EVO_BOAR,rivens:['MS FR AE','MS AE','MS FR SC','MS FR'],neg:NEG_BOAR},
+  {id:'w-boar-mb',gh:'Primarias',n:'Boar Modded Blast',tag:'Host',star:1,img:'i22',req:'Una de las mejores escopetas del juego. Es meta por su gran dispersión de balas y el alto multishot y cadencia que puede tener.',used:['No requiere Thermal Sunder','Usar el suministro de explosión de Cyte','Si no tienes riven, puedes meterle más cadencia'],notes:['Necesitas un riven AE; si no, tendrás que poner Shotgun Elementalist en lugar de Frail Momentum.'],evo:EVO_BOAR,rivens:['MS FR AE','MS AE','MS FR SC','MS FR'],neg:NEG_BOAR},
+  {id:'w-boar-vs',gh:'Primarias',n:'Boar Vicious Spread',tag:'Host',star:1,img:'i28',used:['Recomendado para Xini/Cytherean','Vicious Spread rango 2 (puedes probar R1 a R3)','Requiere Thermal Sunder'],notes:['Necesitas un riven AE; si no, tendrás que poner Shotgun Elementalist en lugar de Frail Momentum.'],evo:EVO_BOAR,rivens:['MS FR AE','MS AE','MS FR SC','MS FR'],neg:NEG_BOAR},
   {id:'w-kohm',gh:'Primarias',n:'Kohm',tag:'Host',img:'i29',used:['Kohm normal (no Kuva)'],rivens:['MS FR'],neg:['Slash','CD','SD','Ammo Max','Reload Speed','Projectile Speed']},
   {id:'w-strun',gh:'Primarias',n:'Strun Wraith',tag:'Client',star:1,img:'i19',req:'Utilicé la imagen de la guía original porque no tengo la Strun buildeada.',evo:[['Evo 2','Blazing Barrel'],['Evo 3','Swift Deliverance'],['Evo 4','Elemental Balance']],rivens:['MS SC AE','MS SC MC (Shotgun Elementalist > Vigilante Armaments)','MS SC HEAT/COLD (Burdened Mag > of Scattering Inferno/Frigid Blast)','MS MC HEAT/COLD'],neg:NEG_BOARC},
   {id:'w-crux',gh:'Primarias',n:'Boar Crux',tag:'Client',star:1,img:'i11',evo:EVO_BOAR,rivens:['MS SC AE','MS SC'],neg:NEG_BOARC},
@@ -700,7 +698,7 @@ const M={
   alts:[['Boar Vicious Spread','w-boar-vs'],['Kohm','w-kohm'],['Boar Crux','w-crux'],['Cyte Wrathful Advanced Client','cyte-wac'],['Cyte Thermal Sunder Client','cyte-ts'],['Vauban Brightbonnet','s-vauban']]},
  'Interception':{why:'Vicious Spread se recomienda para Xini y Cytherean, y requiere Thermal Sunder.',
   tiles:[['Arma del Host','w-boar-mb'],['Arma del Client','w-strun'],['Cyte','cyte-wah'],['Soporte','s-wisp-roar']],
-  alts:[['Boar Vicious Spread','w-boar-vs'],['Boar Crux','w-crux'],['Cyte Energized Munitions','cyte-em'],['Cyte Wrathful Advanced Client','cyte-wac'],['Rhino Brightbonnet','s-rhino'],['Citrine Brightbonnet','s-cit-bb']]},
+  alts:[['Boar Vicious Spread','w-boar-vs'],['Boar Crux','w-crux'],['Cyte Wrathful Advanced Client','cyte-wac'],['Rhino Brightbonnet','s-rhino'],['Citrine Brightbonnet','s-cit-bb']]},
  'Mirror Defense':{why:'Gas se usa en este tipo de misiones porque generan una cantidad más alta de enemigos en comparación con las otras misiones. El gas, poniéndolo muy simplista, “simula” el napalm de la Ogris. Si los DPS llevan gas, nadie del equipo puede llevar algún helminto elemental.',
   tiles:[['Arma del Host','w-boargas-h'],['Arma del Client','w-boargas-c'],['Cyte','cyte-wah'],['Soporte','s-rhino']],
   alts:[['Cyte Wrathful Advanced Client','cyte-wac'],['Citrine Brightbonnet','s-cit-bb']]}
@@ -775,7 +773,7 @@ const faq=[
  ['¿Por qué modeamos Status Chance si Resupply fuerza procs de estado?','Resupply no fuerza el proc si un enemigo muere de una sola bala, y con nuestros buffs eso es lo que pasa. Por eso modeamos Status Chance en Boar, para conseguir el AOE de Blast (o de Gas).'],
  ['No tengo el Icarnon Adapter de Boar ni de Strun. ¿Puedo usarlos igual?','Sí. El incarnon se usa sobre todo por el Status Chance base más alto de Evolution 4, Elemental Balance. Como Host, reemplazaría los mods de Blast y Status Chance por mods de Fire Rate (Accelerated Blast o Vigilante Fervor), porque el Status Chance sería muy bajo. El Client puede usar las mismas builds de la lista.'],
  ['¿Por qué solo usamos Gas en algunos mapas (Tyana Pass y Munio)?','En los mapas de Interception existe el “overkilling”: cuando mueren los primeros enemigos de un grupo de spawn, el resto del grupo puede no aparecer, y eso reduce el total de enemigos (aunque los Cytes con menos experiencia podrían rendir mejor igualmente con Gas). Tyana Pass y Munio (Mirror Defense) generan enemigos con mucha más intensidad, así que conviene usar Gas. También se puede usar Gas en Defense, pero no hace falta porque suelen ser más fáciles que Interception.']];
-const gl=[['AE','Ammo Efficiency'],['EM','Energized Munitions'],['WA','Wrathful Advanced'],['BB','Brightbonnet'],['PV','Parkour Velocity'],['MS','Multishot'],['FR','Fire Rate'],['SC','Status Chance'],['CD','Critical Damage'],['CC','Critical Chance'],['SD','Status Duration'],['LoS','línea de visión'],['VE','Vitus Essence']];
+const gl=[['AE','Ammo Efficiency'],['WA','Wrathful Advanced'],['BB','Brightbonnet'],['PV','Parkour Velocity'],['MS','Multishot'],['FR','Fire Rate'],['SC','Status Chance'],['CD','Critical Damage'],['CC','Critical Chance'],['SD','Status Duration'],['LoS','línea de visión'],['VE','Vitus Essence']];
 document.getElementById('faq-list').innerHTML=faq.map(f=>`<p><b>${f[0]}</b> ${f[1]}</p>`).join('');
 document.getElementById('gloss').innerHTML=gl.map(g=>`<span class="tag sh"><b>${g[0]}</b>${g[1]}</span>`).join('');
 

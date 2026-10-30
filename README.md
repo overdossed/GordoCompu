@@ -22,7 +22,7 @@ Los arbitramientos son misiones donde el drop principal es la esencia Vitus. Se 
 - [Elegir misión](#qué-misión-juegas) <sub>qué llevar en cada una</sub>
 - [Espectros](#espectros) <sub>cuál y qué plano</sub>
 - [Prebuff](#prebuff) <sub>builds y paso a paso</sub>
-- [Cyte](#cyte) <sub>5 builds</sub>
+- [Cyte](#cyte) <sub>4 builds</sub>
 - [Soporte](#soporte) <sub>Wisp, Rhino, Citrine, Vauban</sub>
 - [Armas](#armas) <sub>builds y cómo elegir</sub>
 - [Tyana Pass](#tyana-pass) <sub>qué llevar y cómo lootear</sub>
@@ -80,7 +80,7 @@ Vicious Spread se recomienda para Xini y Cytherean, y requiere Thermal Sunder.
 | Cyte | [Wrathful Advanced (Host)](#cyte) |
 | Soporte | [Wisp Roar](#soporte) |
 
-**También:** [Boar Vicious Spread](#armas), [Boar Crux](#armas), [Cyte Energized Munitions](#cyte), [Cyte Wrathful Advanced Client](#cyte), [Rhino Brightbonnet](#soporte), [Citrine Brightbonnet](#soporte)
+**También:** [Boar Vicious Spread](#armas), [Boar Crux](#armas), [Cyte Wrathful Advanced Client](#cyte), [Rhino Brightbonnet](#soporte), [Citrine Brightbonnet](#soporte)
 
 ### Mirror Defense
 
@@ -306,19 +306,6 @@ Es la build estándar de Cyte para Boar o Kohm, lo que gustes.
 
 > [!NOTE]
 > Si sientes que tienes demasiado PV con Arcane Consequence, puedes bajar el rango o reemplazar algunos shards de Parkour Velocity por shards de Primary Status Chance.
-
-</details>
-<details>
-<summary><b>Energized Munitions (Host)</b></summary>
-
-![Build: Energized Munitions (Host)](img/cyte-em.webp)
-
-**Detalles**
-
-- Boar sin riven de Ammo Efficiency
-
-| **Archon Shards** | 3x Parkour Velocity<br>2x Casting Speed |
-|---|---|
 
 </details>
 <details>
@@ -558,7 +545,7 @@ Una de las mejores escopetas del juego. Es meta por su gran dispersión de balas
 | **Negativos** | Impact, Slash, CD, Ammo Max, Reload Speed, Projectile Speed |
 
 > [!NOTE]
-> Necesitas un riven AE o el build EM; si no, tendrás que poner Shotgun Elementalist en lugar de Frail Momentum.
+> Necesitas un riven AE; si no, tendrás que poner Shotgun Elementalist en lugar de Frail Momentum.
 
 </details>
 <details>
@@ -578,7 +565,7 @@ Una de las mejores escopetas del juego. Es meta por su gran dispersión de balas
 | **Negativos** | Impact, Slash, CD, Ammo Max, Reload Speed, Projectile Speed |
 
 > [!NOTE]
-> Necesitas un riven AE o el build EM; si no, tendrás que poner Shotgun Elementalist en lugar de Frail Momentum.
+> Necesitas un riven AE; si no, tendrás que poner Shotgun Elementalist en lugar de Frail Momentum.
 
 </details>
 <details>
@@ -847,7 +834,6 @@ En los mapas de Interception existe el “overkilling”: cuando mueren los prim
 | Sigla | Significado |
 |---|---|
 | **AE** | Ammo Efficiency |
-| **EM** | Energized Munitions |
 | **WA** | Wrathful Advanced |
 | **BB** | Brightbonnet |
 | **PV** | Parkour Velocity |
