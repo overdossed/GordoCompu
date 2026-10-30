@@ -259,7 +259,7 @@ https://github.com/user-attachments/assets/75f699b5-6d91-4498-8a49-57dabfaa39c5
 
 **Combo de Wisp**
 
-https://github.com/user-attachments/assets/10143bb2-364a-4505-92d8-99c7c676f2c3
+https://github.com/user-attachments/assets/b801c3bf-80d0-4671-92a4-ae02bfb65f6c
 
 
 <p align="right"><a href="#índice">Volver al índice</a></p>
