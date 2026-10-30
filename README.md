@@ -231,7 +231,7 @@ Video: [Cómo hacer motes, por LaserTurtle42](https://youtu.be/XiT9jwemu3k). La 
 
 **Prebuff de Jade**
 
-https://github.com/user-attachments/assets/10143bb2-364a-4505-92d8-99c7c676f2c3
+https://github.com/user-attachments/assets/9f232f6d-7808-4348-b38f-43f2fa2414eb
 
 **Prebuff de Nidus**
 
@@ -259,7 +259,7 @@ https://github.com/user-attachments/assets/75f699b5-6d91-4498-8a49-57dabfaa39c5
 
 **Combo de Wisp**
 
-https://github.com/user-attachments/assets/9f232f6d-7808-4348-b38f-43f2fa2414eb
+https://github.com/user-attachments/assets/10143bb2-364a-4505-92d8-99c7c676f2c3
 
 
 <p align="right"><a href="#índice">Volver al índice</a></p>
