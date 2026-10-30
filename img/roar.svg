@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="600">
+<circle cx="200" cy="190" r="183" fill="#b48cff" fill-opacity=".14" stroke="#9b6dff" stroke-width="2"/>
+<circle cx="200" cy="190" r="129" fill="#b48cff" fill-opacity=".3" stroke="#9b6dff" stroke-width="2"/>
+<circle cx="200" cy="190" r="120" fill="none" stroke="#8b8398" stroke-width="2" stroke-dasharray="6 6"/>
+<circle cx="200" cy="190" r="4" fill="#9b6dff"/>
+<circle cx="60" cy="410" r="8" fill="#b48cff" fill-opacity=".14" stroke="#9b6dff" stroke-width="2"/>
+<circle cx="60" cy="440" r="8" fill="#b48cff" fill-opacity=".3" stroke="#9b6dff" stroke-width="2"/>
+<line x1="51" y1="470" x2="69" y2="470" stroke="#8b8398" stroke-width="2" stroke-dasharray="5 4"/>
+<g fill="#8b8398"><text x="80" y="415">76.25 m, Roar de Rhino o Citrine</text><text x="80" y="445">53.75 m, Roar de Wisp</text><text x="80" y="475">50 m, rango de afinidad</text></g>
+</svg>
