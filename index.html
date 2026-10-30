@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Guía de arbi, 100% real no fake 1k vitus</title>
+<meta name="description" content="Builds, prebuff y cómo jugar cada misión de Arbitrations en Warframe: Defense, Interception y Mirror Defense.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d0a12">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Guía de Arbi">
+<meta property="og:title" content="Guía de arbi, 100% real no fake 1k vitus">
+<meta property="og:description" content="Builds, prebuff y cómo jugar cada misión de Arbitrations en Warframe. Elige tu misión y mira qué llevar.">
+<meta property="og:url" content="https://TU-DOMINIO.com/">
+<meta property="og:image" content="https://TU-DOMINIO.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guía de arbi, 100% real no fake 1k vitus">
+<meta name="twitter:description" content="Builds, prebuff y cómo jugar cada misión de Arbitrations en Warframe.">
+<meta name="twitter:image" content="https://TU-DOMINIO.com/og.jpg">
+<script>try{if(localStorage.getItem('arbi-theme')==='claro')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Web simple tipo documentación: índice fijo a la izquierda, contenido en una columna.
+   Morado oscuro, blanco y negro. Una familia, cinco tamaños, un radio. Sin líneas, sombras ni degradados. */
+:root{
+  --bg:#0d0a12; --panel:#17121f; --panel2:#221a2e; --ink:#f4f2f7; --muted:#a99fb8;
+  --accent:#b48cff; --accent-ink:#120a1f; --warn:#2a1830; --warn-ink:#f0a6c8;
+  --f:'Instrument Sans','Helvetica Neue',system-ui,sans-serif;
+  --s0:14px; --s1:16px; --s2:18px; --s3:24px; --s4:clamp(30px,4vw,52px);
+  --r:10px; --ease:cubic-bezier(.2,.7,.2,1);
+  color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --bg:#ffffff; --panel:#f4f1f8; --panel2:#e9e3f1; --ink:#121016; --muted:#5e566b;
+  --accent:#4b2a7a; --accent-ink:#ffffff; --warn:#f6e9f0; --warn-ink:#8a2453;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--s1)/1.6 var(--f);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r)}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3,h4{margin:0;font-weight:600;letter-spacing:-.01em;overflow-wrap:anywhere}
+p{margin:0 0 1em;max-width:60ch}
+b,strong{font-weight:600}
+
+/* Estructura */
+.shell{display:grid;grid-template-columns:220px minmax(0,1fr);gap:80px;width:min(1200px,calc(100% - 48px));margin:0 auto}
+.side{position:sticky;top:0;align-self:start;height:100dvh;overflow-y:auto;padding:40px 0 28px;display:flex;flex-direction:column;gap:28px}
+.logo{font:600 var(--s2)/1.2 var(--f);color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.side nav{display:flex;flex-direction:column;gap:2px}
+.side nav a{color:var(--muted);text-decoration:none;font:500 var(--s0)/1.3 var(--f);padding:8px 12px;border-radius:var(--r);transition:background .2s,color .2s}
+.side nav a:hover{color:var(--ink);background:var(--panel)}
+.side nav a[aria-current="true"]{color:var(--ink);background:var(--panel2)}
+.side .themeBtn{margin-top:auto;align-self:flex-start}
+.mbar{display:none}
+main{padding:56px 0 96px;min-width:0}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:var(--r);font:600 var(--s1) var(--f);cursor:pointer;text-decoration:none;transition:filter .2s,transform .15s var(--ease)}
+.btn:hover{filter:brightness(1.1)}
+.btn:active{transform:scale(.97)}
+.btn.soft{background:var(--panel2);color:var(--ink)}
+.btn.soft:hover{filter:none;background:var(--panel)}
+.btn.sm{min-height:36px;padding:0 14px;font-size:var(--s0)}
+.themeBtn{font:500 var(--s0) var(--f);background:var(--panel);color:var(--ink);border:0;border-radius:var(--r);padding:8px 14px;cursor:pointer;transition:background .2s,transform .15s var(--ease)}
+.themeBtn:hover{background:var(--panel2)}
+.themeBtn:active{transform:scale(.96)}
+
+/* Índice en móvil */
+#idx{position:fixed;inset:0;z-index:80;background:var(--bg);display:none;overflow-y:auto;padding:16px 20px 40px}
+#idx.open{display:block;animation:fade .25s var(--ease)}
+#idx .top{display:flex;justify-content:space-between;align-items:center;height:44px;margin-bottom:20px}
+#idx nav{display:flex;flex-direction:column;gap:2px}
+#idx nav a{display:flex;flex-direction:column;color:var(--ink);text-decoration:none;font:600 var(--s3)/1.2 var(--f);padding:10px 0}
+#idx nav a small{font:400 var(--s0)/1.4 var(--f);color:var(--muted);margin-top:2px}
+
+/* Inicio */
+.hero h1{font:600 var(--s4)/1.1 var(--f);letter-spacing:-.025em;max-width:20ch}
+.hero .sub{font-size:var(--s2);line-height:1.55;margin:20px 0 0;max-width:60ch}
+.hero .act{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.hero .fn{margin-top:20px}
+.fn{font-size:var(--s0);color:var(--muted);margin:10px 0 0;max-width:68ch}
+.warnbox{margin-top:40px;background:var(--warn);border-radius:var(--r);padding:24px 28px}
+.warnbox h2{font:600 var(--s2) var(--f);color:var(--warn-ink);margin-bottom:8px}
+.warnbox p{margin:0}
+.warnbox p+p{margin-top:12px}
+
+/* Secciones */
+section.s{padding-top:96px}
+.s>header{margin-bottom:28px}
+.s>header h2{font:600 var(--s3)/1.25 var(--f)}
+.s>header p{margin:8px 0 0;color:var(--muted);max-width:64ch}
+.panel{background:var(--panel);border-radius:var(--r);padding:28px}
+h3.sub2{font:600 var(--s2) var(--f);margin:48px 0 12px}
+
+/* Selector de misión */
+.words{display:inline-flex;flex-wrap:wrap;gap:4px;background:var(--panel2);border-radius:var(--r);padding:4px}
+.words button{font:500 var(--s1) var(--f);background:none;border:0;border-radius:calc(var(--r) - 3px);padding:8px 18px;color:var(--muted);cursor:pointer;transition:background .2s,color .2s,transform .15s var(--ease)}
+.words button:hover{color:var(--ink)}
+.words button:active{transform:scale(.97)}
+.words button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.why{margin:20px 0 0;max-width:64ch}
+.play{margin-top:32px}
+.play h3,#tiles h3,#alts h3{font:600 var(--s2) var(--f);margin-bottom:14px}
+.pts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 32px}
+.pt{animation:rise .5s var(--ease) both}
+.pt:nth-child(2){animation-delay:.05s}.pt:nth-child(3){animation-delay:.1s}.pt:nth-child(4){animation-delay:.15s}
+.pt b{display:block;margin-bottom:4px}
+.pt p{margin:0;color:var(--muted)}
+#tiles{margin-top:32px}
+#tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#tiles h3{grid-column:1/-1;margin-bottom:6px}
+.rec{display:flex;flex-direction:column;gap:2px;text-align:left;background:var(--panel2);color:var(--ink);border:0;border-radius:var(--r);padding:14px 16px;cursor:pointer;font:inherit;transition:background .2s,color .2s,transform .15s var(--ease);animation:rise .5s var(--ease) both}
+.rec:nth-of-type(2){animation-delay:.05s}.rec:nth-of-type(3){animation-delay:.1s}.rec:nth-of-type(4){animation-delay:.15s}
+.rec span{font-size:var(--s0);color:var(--muted);transition:color .2s}
+.rec b{font-weight:600}
+.rec:hover{background:var(--accent);color:var(--accent-ink)}
+.rec:hover span{color:inherit}
+.rec:active{transform:scale(.98)}
+#alts{margin-top:28px}
+.alts{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.chipbtn{font:500 var(--s0) var(--f);background:var(--panel2);color:var(--ink);border:0;border-radius:var(--r);padding:8px 12px;cursor:pointer;transition:background .2s,color .2s,transform .15s var(--ease)}
+.chipbtn:hover{background:var(--accent);color:var(--accent-ink)}
+.chipbtn:active{transform:scale(.97)}
+.alts.row{margin-top:28px}
+.alts.row>span{font-size:var(--s0);color:var(--muted);margin-right:6px}
+.alts.row .chipbtn{background:var(--panel)}
+.alts.row .chipbtn:hover{background:var(--accent)}
+
+/* Actualizaciones */
+.updates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.updates h2{font:600 var(--s2) var(--f);margin-bottom:12px}
+.updates p:last-child{margin-bottom:0}
+.rows{margin:0 0 12px;padding:0;list-style:none;display:grid;gap:10px}
+.rows li{display:flex;justify-content:space-between;gap:16px}
+.rows b{text-align:right;font-variant-numeric:tabular-nums}
+
+/* Banco de builds */
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tabs .gh{flex-basis:100%;font-size:var(--s0);color:var(--muted);margin-top:12px}
+.tabs .gh:first-child{margin-top:0}
+.tabs button{font:500 var(--s0)/1.2 var(--f);background:var(--panel);color:var(--ink);border:0;border-radius:var(--r);padding:10px 14px;cursor:pointer;display:flex;gap:8px;align-items:baseline;transition:background .2s,color .2s,transform .15s var(--ease)}
+.tabs button i{font-style:normal;color:var(--muted)}
+.tabs button:hover{background:var(--panel2)}
+.tabs button:active{transform:scale(.97)}
+.tabs button[aria-current="true"]{background:var(--accent);color:var(--accent-ink)}
+.tabs button[aria-current="true"] i{color:inherit;opacity:.8}
+.det{margin-top:16px;background:var(--panel);border-radius:var(--r);padding:28px;animation:fade .3s var(--ease)}
+.det .dh{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+.det h3{font:600 var(--s3)/1.25 var(--f)}
+.meta-tag{display:inline-flex;align-items:center;gap:6px;font:600 var(--s0) var(--f);color:var(--accent)}
+.meta-tag svg{width:14px;height:14px;fill:currentColor}
+.det .copy{margin-left:auto;font:500 var(--s0) var(--f);background:var(--panel2);color:var(--ink);border:0;border-radius:var(--r);padding:7px 12px;cursor:pointer;transition:background .2s,color .2s,transform .15s var(--ease)}
+.det .copy:hover{background:var(--accent);color:var(--accent-ink)}
+.det .copy:active{transform:scale(.97)}
+.req{margin:12px 0 0}
+.plate{margin-top:20px;display:grid;gap:10px}
+.zoom{display:block;padding:0;border:0;background:var(--panel2);border-radius:var(--r);overflow:hidden;cursor:zoom-in;width:100%}
+.zoom.fit{width:fit-content;max-width:100%}
+.zoom img{width:100%;transition:transform .5s var(--ease)}
+.zoom:hover img{transform:scale(1.015)}
+.det dl{margin:24px 0 0;display:grid;grid-template-columns:140px minmax(0,1fr);gap:18px 0}
+.det dt,.det dd{margin:0}
+.det dt{font-size:var(--s0);color:var(--muted);padding-top:2px}
+.det ul.ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font:500 var(--s0)/1.4 var(--f);background:var(--panel2);border-radius:var(--r);padding:4px 10px;font-variant-numeric:tabular-nums}
+.tag.sh b{color:var(--accent);margin-right:6px}
+.negs{color:var(--warn-ink);font-weight:500}
+.evo div{display:flex;gap:16px;margin-bottom:4px}
+.evo b{min-width:52px;color:var(--muted)}
+.note{margin:20px 0 0;background:var(--panel2);border-radius:var(--r);padding:14px 18px;max-width:66ch}
+.note.red{background:var(--warn)}
+.det .note{background:var(--panel2)}
+.det .note.red{background:var(--warn)}
+
+/* Secuencia de prebuff */
+#seq{display:grid;gap:12px}
+.phase h4{font:600 var(--s2) var(--f);margin-bottom:10px}
+.phase ol,.steps{margin:0;padding-left:24px;display:grid;gap:8px}
+.phase li::marker,.steps li::marker{color:var(--muted);font-variant-numeric:tabular-nums}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+.two>div{background:var(--panel);border-radius:var(--r);padding:24px}
+.two h4{font:600 var(--s2) var(--f);margin-bottom:8px}
+.two p:last-child{margin-bottom:0}
+.two .steps{margin-top:12px}
+.two .note{margin-top:16px}
+
+/* Armas */
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:8px}
+.three>div{background:var(--panel);border-radius:var(--r);padding:20px}
+.three h3{font:600 var(--s2) var(--f);margin-bottom:10px}
+.three p{margin:0 0 10px}
+.three p span{display:block;font-size:var(--s0);color:var(--muted)}
+.bars{margin-top:20px}
+.bar-r{display:grid;grid-template-columns:110px minmax(0,1fr) 56px;gap:2px 20px;align-items:center;margin-bottom:20px}
+.bar-r .nm{font-weight:600}
+.bar-r .tr{height:10px;background:var(--panel2);border-radius:var(--r);overflow:hidden}
+.bar-r .tr i{display:block;height:100%;background:var(--accent);border-radius:var(--r);transform-origin:left;transition:transform 1.1s var(--ease)}
+.bar-r.rv:not(.in) .tr i{transform:scaleX(0)}
+.bar-r .v{font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.bar-r .sm{grid-column:2/4;font-size:var(--s0);color:var(--muted)}
+
+/* Tyana */
+.loot{margin-top:24px;background:var(--panel2);border-radius:var(--r);padding:28px}
+.loot h3{font:600 var(--s2) var(--f);margin-bottom:10px}
+.loot .two{margin-top:20px}
+.loot .two>div{background:var(--panel)}
+.loot .note{background:var(--panel)}
+
+/* Equipos */
+.passes{display:grid;gap:8px}
+.pass{background:var(--panel);border-radius:var(--r);padding:14px;display:flex;flex-wrap:wrap;gap:6px}
+.pass span{background:var(--panel2);border-radius:var(--r);padding:8px 14px;font-weight:600}
+.pass em{font-style:normal;margin-left:auto;align-self:center;font:600 var(--s0) var(--f);color:var(--accent);padding:0 6px}
+.pass small{font-weight:400;color:var(--muted);margin-left:6px;font-size:var(--s0)}
+.runfacts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.fact{background:var(--panel);border-radius:var(--r);padding:24px}
+.fact b{display:block;font:600 var(--s3)/1.2 var(--f);letter-spacing:-.02em;margin-bottom:6px}
+.fact span{display:block;color:var(--muted)}
+
+/* Roar */
+.roar{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+.diag{background:var(--panel);border-radius:var(--r);padding:20px}
+.diag svg{display:block;width:100%;height:auto}
+.diag text{font:600 12px var(--f);fill:var(--ink);paint-order:stroke;stroke:var(--panel);stroke-width:5px;stroke-linejoin:round}
+.diag .c1{fill:var(--accent);fill-opacity:.14}
+.diag .c2{fill:var(--accent);fill-opacity:.22}
+.diag .c3{fill:var(--accent);fill-opacity:.34}
+.diag .dot{fill:var(--ink)}
+.diag line{stroke:var(--ink);stroke-width:1.5}
+.roar .facts{display:grid;gap:12px}
+.rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.rule{background:var(--panel);border-radius:var(--r);padding:24px}
+.rule h4{font:600 var(--s2) var(--f);margin-bottom:8px}
+.rule.ok h4{color:var(--accent)}
+.rule.no h4{color:var(--warn-ink)}
+.rule p{margin:0}
+
+/* Instalooting */
+.lead{margin:20px 0 0}
+
+/* Preguntas */
+.faqt p{margin:0 0 18px}
+.gloss{display:flex;flex-wrap:wrap;gap:6px}
+
+/* Créditos */
+.cred{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 32px}
+.cred p{margin:0}
+.foot{margin-top:64px;font-size:var(--s0);color:var(--muted)}
+
+#lb{position:fixed;inset:0;z-index:100;background:rgba(8,6,12,.94);display:none;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
+#lb.open{display:flex;animation:fade .25s var(--ease)}
+#lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:var(--r)}
+
+/* Movimiento: solo transform y opacidad. Sin JS todo queda visible. */
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.hero h1,.hero .sub,.hero .act,.warnbox{animation:rise .7s var(--ease) both}
+.hero .sub{animation-delay:.06s}.hero .act{animation-delay:.12s}.warnbox{animation-delay:.18s}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:1000px){
+  .shell{display:block;width:calc(100% - 40px)}
+  .side{display:none}
+  .mbar{display:flex;position:sticky;top:0;z-index:60;background:var(--bg);align-items:center;justify-content:space-between;gap:12px;height:60px;padding:0 20px}
+  .mbar div{display:flex;gap:8px}
+  html{scroll-padding-top:72px}
+  main{padding-top:32px}
+  section.s{padding-top:72px}
+}
+@media (max-width:620px){
+  .pts,#tiles,.updates,.two,.three,.roar,.rules,.runfacts{grid-template-columns:minmax(0,1fr)}
+  .panel,.det,.loot{padding:20px}
+  .det dl{grid-template-columns:minmax(0,1fr);gap:0}
+  .det dt{padding:16px 0 4px}
+  .words{display:flex;width:100%}
+  .words button{flex:1 1 auto;padding:8px 10px;font-size:var(--s0)}
+  .bar-r{grid-template-columns:86px minmax(0,1fr) 48px;gap:2px 12px}
+  .warnbox{padding:20px}
+  section.s{padding-top:64px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<noscript><p style="padding:24px;font:16px system-ui">Esta guía necesita JavaScript para mostrar las builds.</p></noscript>
+
+<header class="mbar"><a class="logo" href="#inicio">Guía de Arbi</a><div><button class="themeBtn" type="button">Tema</button><button class="btn sm" id="idxBtn" type="button" aria-haspopup="dialog">Índice</button></div></header>
+
+<div id="idx" role="dialog" aria-label="Índice de la guía">
+  <div class="top"><span class="logo">Guía de Arbi</span><button class="btn sm" id="idxClose" type="button">Cerrar</button></div>
+  <nav>
+    <a href="#pick">Elegir misión<small>qué llevar en cada una</small></a>
+    <a href="#sec-espectros">Espectros<small>cuál y qué plano</small></a>
+    <a href="#sec-prebuff">Prebuff<small>builds y paso a paso</small></a>
+    <a href="#sec-cyte">Cyte<small>5 builds</small></a>
+    <a href="#sec-soporte">Soporte<small>Wisp, Rhino, Citrine, Vauban</small></a>
+    <a href="#sec-armas">Armas<small>builds y cómo elegir</small></a>
+    <a href="#sec-tyana">Tyana Pass<small>qué llevar y cómo lootear</small></a>
+    <a href="#sec-comp">Compañeros<small>Mascota y mods</small></a>
+    <a href="#sec-equipos">Equipos<small>composiciones y run completa</small></a>
+    <a href="#sec-roar">Roar<small>alcance y uptime</small></a>
+    <a href="#sec-loot">Instalooting<small>evitar el spawnblock</small></a>
+    <a href="#sec-consejos">Archor y FPS<small>dos consejos</small></a>
+    <a href="#sec-faq">Preguntas<small>dudas frecuentes y glosario</small></a>
+    <a href="#sec-creditos">Créditos<small>la guía original</small></a>
+  </nav>
+</div>
+
+<div class="shell">
+<aside class="side">
+  <a class="logo" href="#inicio">Guía de Arbi</a>
+  <nav id="sidenav" aria-label="Secciones">
+    <a href="#inicio">Inicio</a>
+    <a href="#pick">Elegir misión</a>
+    <a href="#sec-espectros">Espectros</a>
+    <a href="#sec-prebuff">Prebuff</a>
+    <a href="#sec-cyte">Cyte</a>
+    <a href="#sec-soporte">Soporte</a>
+    <a href="#sec-armas">Armas</a>
+    <a href="#sec-tyana">Tyana Pass</a>
+    <a href="#sec-comp">Compañeros</a>
+    <a href="#sec-equipos">Equipos</a>
+    <a href="#sec-roar">Roar</a>
+    <a href="#sec-loot">Instalooting</a>
+    <a href="#sec-consejos">Archor y FPS</a>
+    <a href="#sec-faq">Preguntas</a>
+    <a href="#sec-creditos">Créditos</a>
+  </nav>
+  <button class="themeBtn" type="button">Tema</button>
+</aside>
+
+<main>
+  <section class="hero" id="inicio">
+    <h1>Guía de arbi, 100% real no fake 1k vitus</h1>
+    <p class="sub">Los arbitramientos son misiones donde el drop principal es la esencia Vitus. Se canjea en un relay por honores de arbitramientos y, sobre todo, por Kuva para rolear rivens.</p>
+    <div class="act"><a class="btn" href="#pick">Elegir mi misión</a><a class="btn soft" href="#sec-prebuff">Ver el prebuff</a></div>
+    <p class="fn">Hecha por Gordo Compu si ese soy yo, esta guia es escrita con mis palabras pero toda la informacion esta sacada de la guia oficial de arbis del propio servidor de la misma aquie esta el link con los respectivos creditos <a href="https://arbi.guide" target="_blank" rel="noopener">arbi.guide</a>.</p>
+    <div class="warnbox">
+      <h2>Antes de empezar</h2>
+      <p>Mientras estés en una run de arbitramiento, no presiones Tab ni la letra P. Hacerlo hace que el cliente empiece a laguear de forma recurrente y puede provocar un host migration.</p>
+      <p>Las builds de Cyte y de armas requieren el procedimiento correcto de prebuff, porque todo el daño se delega en los prebuffs y los supports. Úsalas solo en Arbitrations meta, no en lobbies públicos ni en solo. Si tienes dudas, empieza por las <a href="#sec-faq">preguntas frecuentes</a>.</p>
+    </div>
+  </section>
+
+  <section class="s" id="pick">
+    <header><h2>¿Qué misión juegas?</h2><p>Elige la misión y mira cómo se juega y qué llevar.</p></header>
+    <div class="panel">
+      <div class="words" id="words" role="group" aria-label="Tipo de misión"></div>
+      <p class="why" id="why"></p>
+      <div class="play" id="play"></div>
+      <div id="tiles"></div>
+      <div id="alts"></div>
+    </div>
+    <div class="updates">
+      <div class="panel">
+        <h2>Actualización del 11 de octubre</h2>
+        <p>Con la nueva llegada de la nueva actualizacion de los rivens estos han surgido nuevas opciones de rivens para arbitramientos</p>
+        <p class="fn">Voy a ir actualizando la guía si el meta cambia o si se me pasó algo.</p>
+      </div>
+      <div class="panel">
+        <h2>Cambios anunciados por DE</h2>
+        <ul class="rows">
+          <li><span>Ammo Efficiency</span><b>tope de 75%</b></li>
+          <li><span>Riven Dispositions</span><b>todas a 1.2</b></li>
+          <li><span>Boar 3p1n con Primed Ammo Stock</span><b>~110 a ~95 de cargador</b></li>
+          <li><span>Boar 2p1n sin mods de cargador</span><b>~110 a ~80 de cargador</b></li>
+        </ul>
+        <p class="fn">En los últimos Devshorts. 3p1n significa 3 positivos y 1 negativo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="sec-espectros">
+    <header><h2>Espectros</h2><p>Qué espectro llevar y qué plano usar.</p></header>
+    <div class="two">
+      <div><h4>El de Nidus</h4><p>Es el espectro por excelencia y el único que se usa principalmente, por la fuerza que da con su link: más fuerza en los buffs durante la misión. Todos los soportes lo necesitan.</p></div>
+      <div><h4>Planos de 1 estrella</h4><p>Puedes usar cualquier plano de espectro, pero lo ideal son los de 1 estrella, porque dan más por plano.</p></div>
+    </div>
+  </section>
+
+  <section class="s" id="sec-prebuff">
+    <header><h2>Prebuff</h2><p>El famoso prebuff, que a mucha gente se le complica pero es más fácil de lo que parece. Estos son los builds de quienes lo hacen y el orden exacto en que se ejecuta.</p></header>
+    <div class="bench" id="b-prebuff"></div>
+
+    <h3 class="sub2">Secuencia de prebuffing</h3>
+    <p>Son 21 pasos en tres fases. Cada línea indica quién lo hace.</p>
+    <div id="seq"></div>
+    <p class="fn" style="margin-top:14px">Video: <a href="https://youtu.be/XiT9jwemu3k" target="_blank" rel="noopener">Cómo hacer motes, por LaserTurtle42</a>. La guía indica que el video se actualizará pronto.</p>
+
+    <h3 class="sub2">Desde el Client y los motes</h3>
+    <div class="two">
+      <div>
+        <h4>Prebuff desde el Client (Nidus)</h4>
+        <p>Depende 100% de la duración de la Jade.</p>
+        <ol class="steps" id="pov"></ol>
+      </div>
+      <div>
+        <h4>Combo de Wisp para los motes</h4>
+        <p>Es más fácil de lo que uno cree.</p>
+        <ol class="steps" id="motes"></ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="sec-cyte">
+    <header><h2>Cyte</h2><p>Los subsumes del DPS. El Cyte Client necesita el build de Nidus Prebuff. Ver el <a href="https://www.youtube.com/playlist?list=PLePgtsuwWIDhxPtQ3sjrbaj5BgdKDKY78" target="_blank" rel="noopener">POV de Cyte en Arbitration</a>.</p></header>
+    <div class="bench" id="b-cyte"></div>
+  </section>
+
+  <section class="s" id="sec-soporte">
+    <header><h2>Soporte</h2><p>Wisp requiere Afentis y Nidus Specter. Rhino, Citrine y Vauban requieren Arbucep, el build Jade Prebuff y Nidus Specter.</p></header>
+    <div class="bench" id="b-soporte"></div>
+  </section>
+
+  <section class="s" id="sec-armas">
+    <header><h2>Armas</h2><p>Primero elige según la misión, después abre la build.</p></header>
+    <div class="three">
+      <div><h3>Defense</h3><p><span>Host</span>Boar (Modded Blast o Vicious Spread) o Kohm</p><p><span>Client</span>Strun o Boar Crux</p></div>
+      <div><h3>Interception</h3><p><span>Host</span>Boar (Modded Blast o Vicious Spread)</p><p><span>Client</span>Strun o Boar Crux</p></div>
+      <div><h3>Mirror Defense</h3><p><span>Host</span>Boar Gas</p><p><span>Client</span>Boar Gas/ O boar blast (pero solo si ya tienes experiencia en mirror defense)</p></div>
+    </div>
+    <p class="fn" style="margin-bottom:32px">Secundarias: da igual cuál lleves.</p>
+    <div class="bench" id="b-armas"></div>
+
+    <h3 class="sub2" style="margin-top:72px">Si el Client tiene lag</h3>
+    <p>El lag depende del ping, el mapa, el Multishot, el Fire Rate y las specs del PC. Juega con un Host de menor ping o elige un arma con menos Multishot y Fire Rate. También puedes quitar Reinforced Bond o usar un riven con Fire Rate negativo.</p>
+    <div class="bars" id="bars" aria-label="Pellets por segundo por arma"></div>
+    <p class="note">Aunque Strun tiene más pellets/s que Boar Crux, mucha gente rinde mejor con Boar Crux porque tiene más Multishot y menos Fire Rate. Prueba un Overcharge de rango menor (R2) antes de cambiarte a Boar Crux. Si aun así tienes lag con Boar Crux, usa Hell’s Chamber en lugar de Galvanized Hell.</p>
+  </section>
+
+  <section class="s" id="sec-tyana">
+    <header><h2>Tyana Pass</h2><p>Nodo de Mirror Defense donde los enemigos aparecen con mucha más intensidad. Es de los mapas hiper grandes, junto con Xini y Cytherean.</p></header>
+    <div class="three">
+      <div><h3>Qué llevar</h3><p>Gas. Boar Gas como Host o Client. Se usa con el suministro de gas de Cyte.</p></div>
+      <div><h3>Qué evitar</h3><p>Con Gas no uses subsumes elementales: ni Thermal Sunder, ni Shock, ni Nourish.</p></div>
+      <div><h3>Soporte</h3><p>Rhino o Citrine Brightbonnet, porque a Wisp le cuesta más acertar con Roar. El Roar de Rhino o Citrine llega a 76.25 m; el de Wisp, a 53.75 m.</p></div>
+    </div>
+    <p class="note">En Interception existe el “overkilling”: cuando mueren los primeros enemigos de un grupo de spawn, el resto puede no aparecer. Tyana Pass y Munio generan enemigos con mucha más intensidad, así que conviene usar Gas.</p>
+
+    <div class="loot">
+      <h3>Cómo lootear</h3>
+      <p>En Tyana Pass el método para lootear es distinto, porque el Vitus también puede caer en el Void (el vacío) y ahí también aparecen enemigos. La característica del Void es que, cuando al menos un jugador está dentro, dejan de aparecer enemigos en la zona donde estás defendiendo. Por eso el método de looteo es este:</p>
+      <div class="two">
+        <div><h4>Si salen 1 o 2 Vitus en el vacío</h4><p>Déjalos ahí. Sacarás más Vitus simplemente recogiendo los que dropeen en la zona.</p></div>
+        <div><h4>Si salen 3, 4 o más Vitus</h4><p>Ahí sí puedes ir a lootear, pero lo tiene que dictaminar el host. El host da el aviso de cuándo tienen que ir todos, porque si uno va tarde va a joder el spawn de enemigos.</p></div>
+      </div>
+      <p class="note">Idealmente, y solo si es posible, ve a Tyana Pass con un squad que pueda estar en chat de voz, al menos para que el host dicte cuándo lootear en el vacío.</p>
+    </div>
+
+    <div class="alts row"><span>Builds para este nodo</span>
+      <button class="chipbtn" type="button" data-go="w-boargas-h">Boar Gas Host</button>
+      <button class="chipbtn" type="button" data-go="w-boargas-c">Boar Gas Client</button>
+      <button class="chipbtn" type="button" data-go="s-rhino">Rhino Brightbonnet</button>
+      <button class="chipbtn" type="button" data-go="s-cit-bb">Citrine Brightbonnet</button>
+    </div>
+  </section>
+
+  <section class="s" id="sec-comp">
+    <header><h2>Compañeros</h2><p>En compañeros no es tan exigente. Mientras uses una mascota con Primed Animal Instinct y el mod Resourceful Retriever, vas bien.</p></header>
+    <p class="note">Idealmente, los DPS usan el Kavat Adarza por el 60% de probabilidad crítica que da a los aliados en un radio de 25 metros durante 13 segundos.</p>
+  </section>
+
+  <section class="s" id="sec-equipos">
+    <header><h2>Equipos</h2><p>Cinco composiciones para armar tu squad. Una run completa son 102 oleadas en Defensa y/o 10 rondas de Interceptación.</p></header>
+    <div class="passes">
+      <div class="pass"><span>Cyte</span><span>Cyte</span><span>Wisp<small>(Rugido)</small></span><span>Vauban BB</span></div>
+      <div class="pass"><span>Cyte</span><span>Cyte</span><span>Wisp<small>(Thermal)</small></span><span>Rhino BB</span></div>
+      <div class="pass"><span>Cyte</span><span>Wisp<small>(Empower)</small></span><span>Vauban Shock</span><span>Rhino BB</span></div>
+      <div class="pass"><span>Cyte</span><span>Cyte</span><span>Wisp BB</span><span>Citrine Roar</span><em>Para Gas</em></div>
+      <div class="pass"><span>Cyte</span><span>Cyte</span><span>Wisp Roar</span><span>Citrine BB</span><em>Para Gas</em></div>
+    </div>
+    <div class="runfacts">
+      <div class="fact"><b>102 oleadas</b><span>en Defensa</span></div>
+      <div class="fact"><b>10 rondas</b><span>de Interceptación</span></div>
+    </div>
+  </section>
+
+  <section class="s" id="sec-roar">
+    <header><h2>Cómo hacer Roar</h2><p>Hasta dónde llega y cuándo recastearlo.</p></header>
+    <div class="roar">
+      <div class="diag">
+        <svg viewBox="0 0 400 400" role="img" aria-label="Radios a escala: 50 m de afinidad, 53.75 m de Roar de Wisp y 76.25 m de Roar de Rhino o Citrine">
+          <circle class="c1" cx="200" cy="200" r="183"/>
+          <circle class="c2" cx="200" cy="200" r="129"/>
+          <circle class="c3" cx="200" cy="200" r="120"/>
+          <line x1="200" y1="200" x2="200" y2="17"/>
+          <text x="208" y="40">76.25 m, Rhino o Citrine</text>
+          <line x1="200" y1="200" x2="329" y2="200"/>
+          <text x="232" y="190">53.75 m, Wisp</text>
+          <line x1="200" y1="200" x2="94" y2="285"/>
+          <text x="62" y="300">50 m, afinidad</text>
+          <circle class="dot" cx="200" cy="200" r="4"/>
+        </svg>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>53.75 m</b><span>Radio de Roar con un Wisp de 175% de rango. El rango de afinidad es de 50 m y el HUD muestra un indicador cuando un aliado está dentro. Úsalo para saber si alguien está dentro del rango de Roar.</span></div>
+        <button class="zoom fit" type="button" data-zoom="img/roar-hud.webp" aria-label="Ampliar indicador de afinidad en el HUD"><img src="img/roar-hud.webp" alt="Indicador de afinidad en el HUD" loading="lazy"></button>
+        <div class="fact"><b>76.25 m</b><span>Radio de Roar con Rhino o Citrine de 265% de rango. Cubre casi todo el mapa si lo lanzas desde el centro.</span></div>
+        <button class="zoom fit" type="button" data-zoom="img/roar-mapa.webp" aria-label="Ampliar mapa con el radio de Roar"><img src="img/roar-mapa.webp" alt="Radio de Roar sobre el mapa" loading="lazy"></button>
+      </div>
+    </div>
+    <div class="rules">
+      <div class="rule ok"><h4>Recastea cuando caiga Vitus</h4><p>Cuando todos estén en el camp spot y caiga Vitus, recastea Roar para que el DPS tenga el mayor uptime posible antes de ir a lootear.</p></div>
+      <div class="rule no"><h4>No esperes el Link de Nidus</h4><p>Es más importante tener 100% de uptime de Roar que esperar a que te linkeen. Puedes recastearlo una vez linkeado.</p></div>
+    </div>
+    <p class="note"><b>La animación de cast quita el buff.</b> Durante la animación de Roar, tu DPS pierde el buff. Rhino y Citrine usan 2 shards de Casting Speed, así que no es problema. Wisp no tiene espacio para esos shards. Como Wisp, aprovecha “Power Transfer” de Madurai, que da 20 s de 50% de Casting Speed al cambiar a Warframe desde Operator.</p>
+  </section>
+
+  <section class="s" id="sec-loot">
+    <header><h2>Instalooting</h2><p>En Warframe, los enemigos no aparecen si hay línea de visión (LoS) sobre sus puntos de spawn. Impedir spawns así se llama spawnblocking.</p></header>
+    <div class="two">
+      <div><h4>En Defense</h4><p>El número de enemigos por oleada está predeterminado, así que el spawnblocking no reduce el total de spawns. La misión sí dura más.</p></div>
+      <div><h4>En Interception y Mirror Defense</h4><p>Las rondas tienen un timer fijo, así que retrasar spawns por spawnblocking lleva a menos spawns totales.</p></div>
+    </div>
+    <p class="lead">Para minimizar el spawnblock, lootea el Vitus lo más rápido posible (“instaloot”) y, de preferencia, en el orden en que cayó. Lootea el Vitus a través de las paredes siempre que puedas, en vez de abrir puertas y entrar a las salas de spawn.</p>
+    <p class="note red">No lootees nada que no sea Vitus. Eso incluye Riven Slivers, Argon Crystal y similares.</p>
+  </section>
+
+  <section class="s" id="sec-consejos">
+    <header><h2>Archor y FPS</h2><p>Dos cosas que ayudan a llegar a rondas más altas y a farmear más Vitus.</p></header>
+    <div class="two">
+      <div>
+        <h4>Archor</h4>
+        <p>Es una mecánica para dejar el objetivo de la defensa quieto en un sitio específico, así es más cómodo y fácil llegar a rondas altas. Según el mapa se hace de una manera u otra, pero en el papel termina siendo lo mismo.</p>
+        <ol class="steps" id="archor"></ol>
+        <p class="note red">El host no debe volver a sacar el operador en defensa por nada del mundo: el objetivo podría moverse y oneshotearlo.</p>
+      </div>
+      <div>
+        <h4>Más FPS, más enemigos</h4>
+        <p><b>+200 FPS.</b> Por alguna razón, mientras más FPS tienes, más enemigos spawnean. Quien tenga más de 200 FPS puede farmear más Vitus.</p>
+        <p>No es 100% obligatorio tener más de 200 FPS: con 100 ya puedes sacar muy buen Vitus. Incluso hay gente con 50 FPS que saca más de 1k por run en tiers S.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="sec-faq">
+    <header><h2>Preguntas</h2><p>Las dudas más comunes sobre las builds.</p></header>
+    <div class="faqt" id="faq-list"></div>
+    <h3 class="sub2">Glosario</h3>
+    <div class="gloss" id="gloss"></div>
+    <p class="fn" style="margin-top:14px">En las notas de mods, el signo “&gt;” se deja como aparece en la guía original. La guía no define MC; se deja igual.</p>
+  </section>
+
+  <section class="s" id="sec-creditos">
+    <header><h2>Créditos</h2></header>
+    <div class="panel cred">
+      <p>No soy el creador de todo esto ni de toda esta información. Traté de explicarla a mi manera y que se entienda. La información completa está en inglés en la Warframe Arbitrations Guide, y a sus autores se les dan los créditos.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <a class="btn" href="https://arbi.guide/#introduction" target="_blank" rel="noopener">Abrir arbi.guide</a>
+        <a class="btn soft" href="https://docs.google.com/document/d/1apLmDipiKi5vSMbyA65snZDVeHryyWDh1zhce4kRvcA/edit?usp=sharing" target="_blank" rel="noopener">Arbi guide docs</a>
+      </div>
+    </div>
+  </section>
+</main>
+</div>
+
+<div id="lb" role="dialog" aria-label="Imagen ampliada"><img alt=""></div>
+
+<script>
+/* Capturas de las builds: reemplaza el archivo en la carpeta img/ (mismo nombre) o cambia la ruta aquí. */
+const IMG={
+ "i17": "img/cyte-ajustes-1.webp",
+ "i1": "img/cyte-ajustes-2.webp",
+ "i15": "img/cyte-wah.webp",
+ "i7": "img/cyte-wac.webp",
+ "i5": "img/cyte-em.webp",
+ "i16": "img/cyte-ts.webp",
+ "i25": "img/s-wisp-roar.webp",
+ "i12": "img/s-wisp-ts.webp",
+ "i23": "img/s-wisp-bb.webp",
+ "i14": "img/s-rhino.webp",
+ "i8": "img/s-cit-bb.webp",
+ "i27": "img/s-cit-roar.webp",
+ "i24": "img/s-vauban.webp",
+ "i10": "img/p-nidus.webp",
+ "i13": "img/p-jade.webp",
+ "i9": "img/p-vauban.webp",
+ "i22": "img/w-boar-mb.webp",
+ "i28": "img/w-boar-vs.webp",
+ "i29": "img/w-kohm.webp",
+ "i19": "img/w-strun.webp",
+ "i11": "img/w-crux.webp",
+ "i21": "img/w-boargas-h.webp",
+ "i26": "img/w-boargas-c.webp",
+ "i30": "img/p-jade-bb.webp",
+ "i31": "img/cyte-wr-sculptor.webp",
+ "i32": "img/cyte-wr-sin-sculptor.webp",
+ "i33": "img/s-wisp-emp.webp",
+ "i34": "img/cyte-un.webp" };
+
+const sh=a=>a.map(x=>`<span class="tag sh"><b>${x[0]}</b>${x[1]}</span>`).join('');
+const EVO_BOAR=[['Evo 2','Reified Bane'],['Evo 3','Ready Retaliation'],['Evo 4','Elemental Balance']];
+const NEG_BOAR=['Impact','Slash','CD','Ammo Max','Reload Speed','Projectile Speed'];
+const NEG_BOARC=['Impact','Fire Rate','Slash','CD','Ammo Max','Reload Speed','Projectile Speed'];
+const SH_CYTE=[['3x','Parkour Velocity'],['2x','Casting Speed']];
+const SH_W=[['4x','Ability Strength'],['1x','Parkour Velocity*']];
+const WNOTE='*Todas las builds de Wisp usan 4x Ability Strength y 1x Parkour Velocity. Si usas 5x Ability Strength, cambia Coaction Drift por Mobilize.';
+const ARBUCEP='Todos los soportes (Vauban, Rhino, Jade y Nidus) deben usar sí o sí la Arbucep, el arcgun de Nokko.';
+const REQ_SUP='Requiere Arbucep, el build Jade Prebuff y Nidus Specter.';
+const REQ_W='Requiere Afentis y Nidus Specter.';
+
+const GROUPS={
+ cyte:[
+  {id:'cyte-wah',n:'Wrathful Advanced',tag:'Host',star:1,img:'i31',alt:'i32',pre:['i17','i1'],req:'Es la build estándar de Cyte para Boar o Kohm, lo que gustes.',used:['Boar con riven de Ammo Efficiency','Kohm'],shards:SH_CYTE,shardNote:'(Strun/Boar). Las dos capturas de arriba son de la guía: el ajuste Invert Tap/Hold Abilities y el slot de Kullervo.',notes:['Variante en la guía de Gordo Compu: 2x Parkour Velocity y 3x Casting Speed.']},
+  {id:'cyte-wac',n:'Wrathful Advanced',tag:'Client',star:1,img:'i31',alt:'i32',pre:['i17','i1'],usedLbl:'Se usa cuando no se necesita Thermal Sunder',used:['Modded Blast','Wisp Thermal Sunder'],notes:['Si sientes que tienes demasiado PV con Arcane Consequence, puedes bajar el rango o reemplazar algunos shards de Parkour Velocity por shards de Primary Status Chance.'],shards:SH_CYTE,shardNote:'Con Arcane Consequence puedes cambiar shards de PV por shards de Primary Status Chance.'},
+  {id:'cyte-em',n:'Energized Munitions',tag:'Host',img:'i5',used:['Boar sin riven de Ammo Efficiency'],shards:SH_CYTE},
+  {id:'cyte-ts',n:'Thermal Sunder',tag:'Client',img:'i16',usedLbl:'Se usa cuando se necesita Thermal Sunder',used:['Sin Modded Blast ni Wisp Thermal Sunder','Daño extra para misiones Defense','Se recomienda con Client más que con Host, con Boar, Strun o Kohm'],notes:['!No uses Nidus Specter si tienes el buff de Invig/Arbi: lanzar Sunder sobre 1200% causa lag. Esta build laguea el doble que la normal.','Variante en la guía de Gordo Compu: 2x Parkour Velocity y 3x Primary Status Chance.'],shards:SH_CYTE,shardNote:'(Strun/Boar)'},
+  {id:'cyte-un',n:'Escuela Unairu',img:'i34',used:['Se usa esta escuela por su ataque Tauron, que da armadura y permite tener al máximo la Sobrecarga primaria.']}
+ ],
+ soporte:[
+  {id:'s-wisp-roar',g:'Wisp',n:'Roar',star:1,img:'i25',req:REQ_W,used:['Wisp por defecto','Es la encargada de dar cadencia a los DPS y algo de supervivencia con los motes de vida','Build estándar para usar junto al soporte Vauban'],shards:SH_W,shardNote:WNOTE},
+  {id:'s-wisp-ts',g:'Wisp',n:'Thermal Sunder',star:1,img:'i12',req:REQ_W,used:['Con soporte Rhino BB','Cuando el Cyte va solo de DPS o ninguno de los DPS quiere ir Thermal'],notes:['!No uses Nidus Specter: lanzar Sunder sobre 1200% causa lag. Thermal laguea más que las demás.'],shards:SH_W,shardNote:WNOTE},
+  {id:'s-wisp-bb',g:'Wisp',n:'Brightbonnet',img:'i23',req:REQ_W,used:['Con soporte Citrine Roar (poco común)'],shards:SH_W,shardNote:WNOTE},
+  {id:'s-wisp-emp',g:'Wisp',n:'Empower',img:'i33',req:REQ_W,used:['Da la mayor cantidad de cadencia, porque Empower da 50% más de fuerza para la siguiente habilidad','Se usa en la composición Cyte, Wisp (Empower), Vauban Shock y Rhino BB'],shards:SH_W,shardNote:WNOTE},
+  {id:'s-rhino',g:'Rhino',n:'Brightbonnet',star:1,img:'i14',req:REQ_SUP,used:['Se usa por su rugido, que da un montón de daño de facción','Mapas grandes de Interception (Callisto, Xini, Cytherean)','Mirror Defense (Tyana Pass, Munio), donde a Wisp le cuesta más acertar con Roar'],notes:['Variante en la guía de Gordo Compu: 3x Ability Strength y 2x Casting Speed.'],shards:[['2x','Ability Strength'],['2x','Casting Speed'],['1x','Parkour Velocity']]},
+  {id:'s-cit-bb',g:'Citrine',n:'Brightbonnet',star:1,img:'i8',req:REQ_SUP,used:['Mapas de Interception y Mirror Defense con comps de Blast o Gas'],shards:[['2x','Ability Strength'],['2x','Casting Speed'],['1x','Parkour Velocity']]},
+  {id:'s-cit-roar',g:'Citrine',n:'Roar',img:'i27',req:REQ_SUP,used:['Build poco común','Mapas de Interception y Mirror Defense con comps de Blast o Gas'],shards:[['3x','Ability Strength'],['1x','Casting Speed'],['1x','Parkour Velocity']]},
+  {id:'s-vauban',g:'Vauban',n:'Brightbonnet',star:1,img:'i24',req:REQ_SUP,used:['Se usa en Defense','Se usa por sus pads (la segunda habilidad, al mantenerla presionada), que dan daño multiplicativo y velocidad de parkour','La mejor opción para Defense: los enemigos escalan de nivel más rápido y su daño multiplicativo lo contrarresta'],notes:['Variante en la guía de Gordo Compu: 5x Ability Duration, o 3x Ability Duration y 2x Ability Strength.'],shards:[['5x','Ability Strength']]}
+ ],
+ prebuff:[
+  {id:'p-nidus',n:'Nidus Brightbonnet',star:1,img:'i10',req:ARBUCEP,used:['Linkea primero a Wisp, espera a que prepare los motes y después linkea a Jade.'],notes:['Empower cuando se usa con Wisp BB.'],shards:[['5x','Ability Strength']],shardNote:'Idealmente tauforjados.'},
+  {id:'p-jade',n:'Jade Warcry',star:1,img:'i13',req:ARBUCEP,used:['La Jade se sale de la misión: al tirar un aura y salirse, esta queda permanente para toda la misión.'],shards:[['5x','Ability Strength']],shardNote:'Idealmente tauforjados.'},
+  {id:'p-jade-bb',n:'Jade Brightbonnet',img:'i30'
+   // Rellena aquí (quita // y completa lo que necesites):
+   // ,req:'frase de introducción', used:['detalle 1','detalle 2'], shards:[['5x','Ability Strength']], notes:['nota']
+  },
+  {id:'p-vauban',n:'Vauban Brightbonnet',star:1,img:'i9',shards:[['5x','Ability Strength']]}
+ ],
+ armas:[
+  {id:'w-boar-mb',gh:'Primarias',n:'Boar Modded Blast',tag:'Host',star:1,img:'i22',req:'Una de las mejores escopetas del juego. Es meta por su gran dispersión de balas y el alto multishot y cadencia que puede tener.',used:['No requiere Thermal Sunder','Usar el suministro de explosión de Cyte','Si no tienes riven, puedes meterle más cadencia'],notes:['Necesitas un riven AE o el build EM; si no, tendrás que poner Shotgun Elementalist en lugar de Frail Momentum.'],evo:EVO_BOAR,rivens:['MS FR AE','MS AE','MS FR SC','MS FR'],neg:NEG_BOAR},
+  {id:'w-boar-vs',gh:'Primarias',n:'Boar Vicious Spread',tag:'Host',star:1,img:'i28',used:['Recomendado para Xini/Cytherean','Vicious Spread rango 2 (puedes probar R1 a R3)','Requiere Thermal Sunder'],notes:['Necesitas un riven AE o el build EM; si no, tendrás que poner Shotgun Elementalist en lugar de Frail Momentum.'],evo:EVO_BOAR,rivens:['MS FR AE','MS AE','MS FR SC','MS FR'],neg:NEG_BOAR},
+  {id:'w-kohm',gh:'Primarias',n:'Kohm',tag:'Host',img:'i29',used:['Kohm normal (no Kuva)'],rivens:['MS FR'],neg:['Slash','CD','SD','Ammo Max','Reload Speed','Projectile Speed']},
+  {id:'w-strun',gh:'Primarias',n:'Strun Wraith',tag:'Client',star:1,img:'i19',req:'Utilicé la imagen de la guía original porque no tengo la Strun buildeada.',evo:[['Evo 2','Blazing Barrel'],['Evo 3','Swift Deliverance'],['Evo 4','Elemental Balance']],rivens:['MS SC AE','MS SC MC (Shotgun Elementalist > Vigilante Armaments)','MS SC HEAT/COLD (Burdened Mag > of Scattering Inferno/Frigid Blast)','MS MC HEAT/COLD'],neg:NEG_BOARC},
+  {id:'w-crux',gh:'Primarias',n:'Boar Crux',tag:'Client',star:1,img:'i11',evo:EVO_BOAR,rivens:['MS SC AE','MS SC'],neg:NEG_BOARC},
+  {id:'w-boargas-h',gh:'Primarias',n:'Boar Gas',tag:'Host',img:'i21',usedLbl:'Uso',used:['Mirror Defense (Tyana Pass, Munio)'],notes:['!No lo uses con subsumes elementales (Thermal Sunder, Shock o Nourish).'],evo:EVO_BOAR,rivens:['MS SC SD','MS FR SD','MS AE SD','MS SD'],neg:NEG_BOAR},
+  {id:'w-boargas-c',gh:'Primarias',n:'Boar Gas',tag:'Client',img:'i26',usedLbl:'Uso',used:['Mirror Defense (Tyana Pass, Munio)'],notes:['!No lo uses con subsumes elementales (Thermal Sunder).'],evo:EVO_BOAR,rivens:['MS SC SD','MS SD'],neg:NEG_BOARC},
+  {id:'afentis',gh:'Otras armas',n:'Afentis Prime',req:'Es el arma que debe usar principalmente Wisp: lánzala cada 10 a 20 segundos.',used:['El aura que spawnea otorga cadencia, velocidad de recarga y menos retroceso']},
+  {id:'praedos',gh:'Otras armas',n:'Praedos',used:['Se usa por su velocidad de parkour, con sus evoluciones']}
+ ]
+};
+const sel={};
+const where={};
+Object.entries(GROUPS).forEach(([k,a])=>a.forEach(i=>where[i.id]=k));
+const title=i=>i.g?`${i.g} ${i.n}`:(i.tag&&!/^Host y/.test(i.tag)?`${i.n} (${i.tag})`:i.n);
+const STAR='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5 7.5-.7z"/></svg>';
+
+function detail(i){
+  const nm=title(i);
+  const pre=(i.pre||[]).map(p=>`<button class="zoom fit" type="button" data-zoom="${IMG[p]}" aria-label="Ampliar captura de ajustes"><img src="${IMG[p]}" alt="Ajustes de la build" loading="lazy"></button>`).join('');
+  const plate=i.img?`<div class="plate">${pre}<button class="zoom" type="button" data-zoom="${IMG[i.img]}" aria-label="Ampliar build ${nm}"><img src="${IMG[i.img]}" alt="Build: ${nm}" loading="lazy"></button>${i.alt?`<p class="fn">Si no tienes Arcane Sculptor:</p><button class="zoom" type="button" data-zoom="${IMG[i.alt]}" aria-label="Ampliar build sin Arcane Sculptor"><img src="${IMG[i.alt]}" alt="Build: ${nm} sin Arcane Sculptor" loading="lazy"></button>`:''}</div>`:'';
+  let rows='';
+  if(i.used) rows+=`<dt>${i.usedLbl||'Detalles'}</dt><dd><ul class="ul">${i.used.map(u=>`<li>${u}</li>`).join('')}</ul></dd>`;
+  if(i.evo) rows+=`<dt>Incarnon</dt><dd class="evo">${i.evo.map(e=>`<div><b>${e[0]}</b>${e[1]}</div>`).join('')}</dd>`;
+  if(i.rivens) rows+=`<dt>Rivens</dt><dd><div class="tags">${i.rivens.map(r=>`<span class="tag">${r}</span>`).join('')}</div></dd>`;
+  if(i.neg) rows+=`<dt>Negativos</dt><dd class="negs">${i.neg.join(', ')}</dd>`;
+  if(i.shards) rows+=`<dt>Archon Shards</dt><dd><div class="tags">${sh(i.shards)}</div>${i.shardNote?`<p class="fn">${i.shardNote}</p>`:''}</dd>`;
+  const notes=(i.notes||[]).map(n=>n[0]==='!'?`<p class="note red">${n.slice(1)}</p>`:`<p class="note">${n}</p>`).join('');
+  return `<div class="det"><div class="dh"><h3>${nm}</h3>${i.star?`<span class="meta-tag">${STAR}Build meta</span>`:''}<button class="copy" type="button" data-copy="${i.id}">Copiar enlace</button></div>${i.req?`<p class="req">${i.req}</p>`:''}${plate}${rows?`<dl>${rows}</dl>`:''}${notes}</div>`;
+}
+function renderBench(k){
+  const root=document.getElementById('b-'+k),items=GROUPS[k];
+  const cur=items.find(i=>i.id===sel[k])||items[0];sel[k]=cur.id;
+  let list='',lastG=null;
+  items.forEach(i=>{
+    const g=i.g||i.gh;
+    if(g&&g!==lastG){list+=`<div class="gh">${g}</div>`;lastG=g}
+    list+=`<button type="button" data-pick="${i.id}" aria-current="${i.id===cur.id}">${i.n}${i.tag?`<i>${i.tag}</i>`:''}</button>`;
+  });
+  root.innerHTML=`<div class="tabs" role="group" aria-label="Builds">${list}</div><div id="d-${k}">${detail(cur)}</div>`;
+}
+Object.keys(GROUPS).forEach(renderBench);
+function select(id,scroll){
+  const k=where[id];if(!k)return;sel[k]=id;renderBench(k);
+  try{history.replaceState(null,'','#'+id)}catch(e){}
+  if(scroll){const el=document.getElementById('b-'+k);el.scrollIntoView({block:'start',behavior:'smooth'})}
+}
+document.addEventListener('click',e=>{
+  const p=e.target.closest('[data-pick]');if(p){select(p.dataset.pick,false);return}
+  const g=e.target.closest('[data-go]');if(g){select(g.dataset.go,true);return}
+  const z=e.target.closest('[data-zoom]');if(z){lbi.src=z.dataset.zoom;lbi.alt=z.querySelector('img')?.alt||'';lb.classList.add('open')}
+});
+
+/* Selector de misión */
+const M={
+ 'Defense':{why:'Gas se puede usar en Defense, pero no hace falta porque suele ser más fácil que Interception. Thermal Sunder en el Client da daño extra en Defense.',
+  tiles:[['Arma del Host','w-boar-mb'],['Arma del Client','w-strun'],['Cyte','cyte-wah'],['Soporte','s-wisp-roar']],
+  alts:[['Boar Vicious Spread','w-boar-vs'],['Kohm','w-kohm'],['Boar Crux','w-crux'],['Cyte Wrathful Advanced Client','cyte-wac'],['Cyte Thermal Sunder Client','cyte-ts'],['Vauban Brightbonnet','s-vauban']]},
+ 'Interception':{why:'Vicious Spread se recomienda para Xini y Cytherean, y requiere Thermal Sunder.',
+  tiles:[['Arma del Host','w-boar-mb'],['Arma del Client','w-strun'],['Cyte','cyte-wah'],['Soporte','s-wisp-roar']],
+  alts:[['Boar Vicious Spread','w-boar-vs'],['Boar Crux','w-crux'],['Cyte Energized Munitions','cyte-em'],['Cyte Wrathful Advanced Client','cyte-wac'],['Rhino Brightbonnet','s-rhino'],['Citrine Brightbonnet','s-cit-bb']]},
+ 'Mirror Defense':{why:'Gas se usa en este tipo de misiones porque generan una cantidad más alta de enemigos en comparación con las otras misiones. El gas, poniéndolo muy simplista, “simula” el napalm de la Ogris. Si los DPS llevan gas, nadie del equipo puede llevar algún helminto elemental.',
+  tiles:[['Arma del Host','w-boargas-h'],['Arma del Client','w-boargas-c'],['Cyte','cyte-wah'],['Soporte','s-rhino']],
+  alts:[['Cyte Wrathful Advanced Client','cyte-wac'],['Citrine Brightbonnet','s-cit-bb']]}
+};
+/* Cómo se juega cada misión: edita aquí los textos (t = título, d = descripción) */
+const PLAY={
+ 'Defense':[
+  {t:'Los enemigos escalan más rápido',d:'Por eso el daño multiplicativo de Vauban es la mejor opción de soporte.'},
+  {t:'El total de enemigos está fijo',d:'El número de enemigos por oleada está predeterminado, así que el spawnblocking no lo reduce: la misión solo dura más. Aun así, lootea el Vitus rápido.'},
+  {t:'Deja el objetivo quieto',d:'Con el Archor dejas el objetivo de la defensa en un sitio cómodo para llegar a rondas altas. Mira <a href="#sec-consejos">Archor y FPS</a>.'},
+  {t:'Una run completa',d:'Son 102 oleadas. Gas no hace falta, porque Defense suele ser más fácil que Interception.'}
+ ],
+ 'Interception':[
+  {t:'Las rondas tienen un timer fijo',d:'Retrasar spawns por spawnblocking lleva a menos spawns totales. Lootea el Vitus lo más rápido posible y, de preferencia, en el orden en que cayó.'},
+  {t:'Cuida el overkilling',d:'Cuando mueren los primeros enemigos de un grupo de spawn, el resto del grupo puede no aparecer, y eso reduce el total de enemigos.'},
+  {t:'Rhino es la mejor opción',d:'Su rugido da mucho daño de facción. Se usa sobre todo en mapas grandes como Callisto, Xini y Cytherean.'},
+  {t:'Una run completa',d:'Son 10 rondas.'}
+ ],
+ 'Mirror Defense':[
+  {t:'Las rondas tienen un timer fijo',d:'Igual que en Interception, retrasar spawns lleva a menos spawns totales: lootea el Vitus rápido.'},
+  {t:'Tyana Pass',d:'Tyana es un mapa que necesita una sección aparte.<br><a class="btn soft sm" href="#sec-tyana" style="margin-top:10px">Ver Tyana Pass</a>'},
+  {t:'Sin subsumes elementales',d:'Con Gas no uses Thermal Sunder, Shock ni Nourish.'},
+  {t:'Rhino o Citrine en el soporte',d:'A Wisp le cuesta más acertar con Roar en estos mapas.'}
+ ]
+};
+const all=Object.values(GROUPS).flat();const byId=Object.fromEntries(all.map(i=>[i.id,i]));
+const words=document.getElementById('words'),tilesEl=document.getElementById('tiles'),altsEl=document.getElementById('alts'),why=document.getElementById('why'),playEl=document.getElementById('play');
+const mk=Object.keys(M);
+words.innerHTML=mk.map((k,i)=>`<button type="button" data-m="${k}" aria-pressed="${i==0}">${k}</button>`).join('');
+function renderPick(k){
+  const m=M[k];
+  [...words.children].forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===k));
+  why.textContent=m.why;
+  playEl.innerHTML=`<h3>Cómo se juega</h3><div class="pts">${PLAY[k].map(p=>`<div class="pt"><b>${p.t}</b><p>${p.d}</p></div>`).join('')}</div>`;
+  tilesEl.innerHTML=`<h3>Qué llevar</h3>${m.tiles.map(t=>{const i=byId[t[1]];return `<button class="rec" type="button" data-go="${i.id}"><span>${t[0]}</span><b>${title(i)}</b></button>`}).join('')}`;
+  altsEl.innerHTML=`<h3>También</h3><div class="alts">${m.alts.map(a=>`<button class="chipbtn" type="button" data-go="${a[1]}">${a[0]}</button>`).join('')}</div>`;
+}
+words.addEventListener('click',e=>{const b=e.target.closest('[data-m]');if(b){renderPick(b.dataset.m);try{history.replaceState(null,'','#'+slug(b.dataset.m))}catch(e){}}});
+renderPick(mk[0]);
+
+/* Pellets/s */
+const pel=[['Strun OC',90.66,32.13,2912.45],['Boar Crux',44.43,60.01,2666.34]];
+document.getElementById('bars').innerHTML=pel.map(p=>`<div class="bar-r"><span class="nm">${p[0]}</span><div class="tr"><i style="width:${(p[3]/2912.45*100).toFixed(1)}%"></i></div><span class="v">${p[3].toFixed(0)}</span><span class="sm">Multishot ${p[1]}, Fire Rate ${p[2]}, pellets/s ${p[3].toFixed(2)}</span></div>`).join('');
+
+/* Secuencia de prebuff */
+const L=['Nidus','Wisp','Jade','Vauban'];
+const steps=[
+ ['Fase 1'],[1,'coloca el mote de Vitality'],[0,'dropea Brightbonnet y lo buffea al 200% con Arbucep'],[2,'lanza Hardened Wellspring'],[2,'lanza Power of Seven para 150% de Ability Strength'],[0,'activa Sling Strength y Molt Vigor'],[0,'hace Link a Wisp'],[1,'coloca el mote de Vitality'],[1,'activa Sling Strength y Molt Vigor'],[1,'coloca el mote de Haste'],
+ ['Fase 2'],[0,'activa Sling Strength y Molt Vigor'],[0,'hace Link a Jade'],[2,'recastea Power of Seven'],[2,'lanza Warcry'],[2,'cambia Power of Seven por Deathbringer'],[0,'sale y se une como Cyte'],[2,'cuando ve los buffs de Deathbringer y Warcry en el HUD del Client, sale y se une como Vauban (pre)'],
+ ['Fase 3'],[3,'dropea Nidus Specter'],[3,'dropea Brightbonnet y lo buffea al 200% con Arbucep'],[3,'coloca 4 pads uno encima del otro'],[3,'activa Sling Strength y Molt Vigor'],[3,'todos los demás toman los pads; luego Vauban sale y se une con su frame']];
+
+
+(function(){
+  let n=0,html='',open=false;
+  steps.forEach(st=>{
+    if(st.length==1){if(open)html+='</ol></div>';html+=`<div class="panel phase"><h4>${st[0]}</h4><ol start="${n+1}">`;open=true;return}
+    n++;html+=`<li><b>${L[st[0]]}</b> ${st[1]}</li>`;
+  });
+  if(open)html+='</ol></div>';
+  document.getElementById('seq').innerHTML=html;
+})();
+const fill=(id,a)=>{document.getElementById(id).innerHTML=a.map(t=>`<li>${t}</li>`).join('')};
+fill('pov',['Entras como Nidus.','Linkeas a la Wisp para que coloque los motes.','Linkeas a la Jade y esperas a que ella tire el buff de daño.','Te sales y vuelves a entrar como Cyte. Asegúrate de tener el buff de daño del aura de Jade; cuando lo tengas, la Jade se sale y listo.']);
+fill('motes',['Activar Madurai.','Activar vigor.','Esperar el link del Nidus.','Lanzar el mote de vida (rojo).','Activar Madurai.','Activar vigor.','Esperar el segundo link del Nidus (porque se activa Bellicose de él).','Lanzar el mote de cadencia (verde).']);
+fill('archor',['Todo el squad se pone en operador.','El host activa la defensa como operador.','Guía al objetivo al lugar donde quieren dejarlo quieto (donde no le vaya a caer un meteorito).','Cuando vean que el objetivo ya no se mueve, cambian al Warframe y juegan normal.']);
+
+/* FAQ y glosario */
+const faq=[
+ ['¿Por qué Wrathful Advanced? ¿Por qué rango negativo?','Wrathful Advanced ayuda mucho con el movimiento, y eso ayuda contra el spawnblocking. No se necesita rango en WA porque se usa como reset de Bullet Jump en vez de como teletransporte. Puedes hacer bullet jump, WA y bullet jump otra vez sin aterrizar.'],
+ ['¿Puedo usar Infested Mobility en lugar de Wrathful Advanced?','Sí. Wrathful Advanced se usa más porque ya usamos shards de Parkour Velocity y WA permite cambiar de dirección en el aire. Si prefieres Infested Mobility, puedes cambiar los shards de Parkour Velocity por shards de Primary Status Chance.'],
+ ['¿Por qué no Shock ni Nourish?','Con los buffs que tenemos hoy, los subsumes de daño no hacen falta. Thermal Sunder se usa sobre todo para dar Blast (cuando no se modea para eso) o más peso elemental de Blast. Shock y Nourish interfieren con Blast porque aportan su propio peso elemental.'],
+ ['¿Por qué modeamos Status Chance si Resupply fuerza procs de estado?','Resupply no fuerza el proc si un enemigo muere de una sola bala, y con nuestros buffs eso es lo que pasa. Por eso modeamos Status Chance en Boar, para conseguir el AOE de Blast (o de Gas).'],
+ ['No tengo el Icarnon Adapter de Boar ni de Strun. ¿Puedo usarlos igual?','Sí. El incarnon se usa sobre todo por el Status Chance base más alto de Evolution 4, Elemental Balance. Como Host, reemplazaría los mods de Blast y Status Chance por mods de Fire Rate (Accelerated Blast o Vigilante Fervor), porque el Status Chance sería muy bajo. El Client puede usar las mismas builds de la lista.'],
+ ['¿Por qué solo usamos Gas en algunos mapas (Tyana Pass y Munio)?','En los mapas de Interception existe el “overkilling”: cuando mueren los primeros enemigos de un grupo de spawn, el resto del grupo puede no aparecer, y eso reduce el total de enemigos (aunque los Cytes con menos experiencia podrían rendir mejor igualmente con Gas). Tyana Pass y Munio (Mirror Defense) generan enemigos con mucha más intensidad, así que conviene usar Gas. También se puede usar Gas en Defense, pero no hace falta porque suelen ser más fáciles que Interception.']];
+const gl=[['AE','Ammo Efficiency'],['EM','Energized Munitions'],['WA','Wrathful Advanced'],['BB','Brightbonnet'],['PV','Parkour Velocity'],['MS','Multishot'],['FR','Fire Rate'],['SC','Status Chance'],['CD','Critical Damage'],['CC','Critical Chance'],['SD','Status Duration'],['LoS','línea de visión'],['VE','Vitus Essence']];
+document.getElementById('faq-list').innerHTML=faq.map(f=>`<p><b>${f[0]}</b> ${f[1]}</p>`).join('');
+document.getElementById('gloss').innerHTML=gl.map(g=>`<span class="tag sh"><b>${g[0]}</b>${g[1]}</span>`).join('');
+
+/* Índice, lightbox */
+const idx=document.getElementById('idx');
+document.getElementById('idxBtn').addEventListener('click',()=>idx.classList.add('open'));
+document.getElementById('idxClose').addEventListener('click',()=>idx.classList.remove('open'));
+idx.addEventListener('click',e=>{if(e.target.closest('a'))idx.classList.remove('open')});
+const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+lb.addEventListener('click',()=>lb.classList.remove('open'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){lb.classList.remove('open');idx.classList.remove('open')}});
+
+/* Enlaces directos: #w-boar-mb abre esa build, #interception abre esa misión */
+const slug=t=>t.toLowerCase().split(' ').join('-');
+const missionBySlug=Object.fromEntries(Object.keys(M).map(k=>[slug(k),k]));
+function route(){
+  const h=decodeURIComponent(location.hash.slice(1));
+  if(where[h]){select(h,true);return}
+  if(missionBySlug[h]){renderPick(missionBySlug[h]);document.getElementById('pick').scrollIntoView({block:'start',behavior:'smooth'})}
+}
+addEventListener('hashchange',route);route();
+document.addEventListener('click',e=>{
+  const c=e.target.closest('[data-copy]');if(!c)return;
+  const url=location.href.split('#')[0]+'#'+c.dataset.copy;
+  const done=()=>{c.textContent='Enlace copiado';setTimeout(()=>{c.textContent='Copiar enlace'},1800)};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done,()=>{window.prompt('Copia este enlace',url)})}
+  else{window.prompt('Copia este enlace',url)}
+});
+
+/* Tema: oscuro por defecto, botón para pasar a claro (se recuerda en este navegador) */
+const themeBtns=document.querySelectorAll('.themeBtn');let light=document.documentElement.getAttribute('data-theme')==='light';
+function applyTheme(){const r=document.documentElement;if(light)r.setAttribute('data-theme','light');else r.removeAttribute('data-theme');themeBtns.forEach(b=>b.textContent=light?'Tema: claro':'Tema: oscuro')}
+themeBtns.forEach(b=>b.addEventListener('click',()=>{light=!light;applyTheme();try{localStorage.setItem('arbi-theme',light?'claro':'oscuro')}catch(e){}}));
+applyTheme();
+
+/* Índice lateral: resalta la sección en pantalla */
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  const links=[...document.querySelectorAll('#sidenav a')];
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;links.forEach(a=>a.setAttribute('aria-current',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-30% 0px -65% 0px'});
+  document.querySelectorAll('main section[id]').forEach(s=>io.observe(s));
+})();
+
+/* Entrada de las partes de cada sección (solo opacidad y transform; sin JS todo se ve) */
+(function(){
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const q='.s>header,.s>.panel,.updates>div,.three>div,.two>div,.phase,.bar-r,.fact,.diag,.rule,.pass,.bench,.lead,.faqt p,.gloss,.loot,.s>.note,.cred';
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll(q).forEach(el=>{
+    const i=[...el.parentNode.children].filter(c=>c.matches(q)).indexOf(el);
+    el.style.setProperty('--d',Math.min(i,4)*.07+'s');
+    el.classList.add('rv');io.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
